@@ -1,4 +1,4 @@
-#!/home/ayush/Work/hackathon/Devfest 18/venv/bin/python
+#!/home/ayush/Work/hackathon/Devfest_18/venv/bin/python
 
 import sys
 import getopt

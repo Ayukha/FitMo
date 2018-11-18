@@ -8,6 +8,5 @@ from .models import Profile
 from django.contrib.auth.models import User
 
 # Create your views here.
-@receiver(post_save, sender=User)
 def addProfile():
-	pass
+	

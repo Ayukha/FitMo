@@ -14,13 +14,14 @@ class Profile(models.Model):
     xp = models.IntegerField(default=0, blank=False, null=True)
     level = models.IntegerField(max_length=99)
     location = models.IntegerField(default=0)
+    followers = models.IntegerField(default=0)
+    following = models.IntegerField(default=0)
 
     def __str__(self):
         return '{}'.format(self.user)
 
     class Meta:
         app_label = 'accounts'
-        db_table = 'user_profile'
 
 
 # @receiver(post_save, sender=User)
