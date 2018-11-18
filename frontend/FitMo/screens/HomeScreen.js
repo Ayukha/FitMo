@@ -22,6 +22,8 @@ export default class HomeScreen extends React.Component {
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
           <View style={styles.welcomeContainer}>
+          <Text style={styles.head1}>Hi, Arush.</Text>
+          <Text style={styles.sub}>You've walked <Text style={styles.purple}>32 mins</Text> today</Text>
             <Image
               source={
                 __DEV__
@@ -32,9 +34,7 @@ export default class HomeScreen extends React.Component {
             />
           </View>
 
-          <View style={styles.getStartedContainer}>
-            {this._maybeRenderDevelopmentModeWarning()}
-
+          <View style={styles.stepsContainer}>
             <Text style={styles.getStartedText}>Get started by opening</Text>
 
             <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
@@ -52,14 +52,6 @@ export default class HomeScreen extends React.Component {
             </TouchableOpacity>
           </View>
         </ScrollView>
-
-        <View style={styles.tabBarInfoContainer}>
-          <Text style={styles.tabBarInfoText}>This is a tab bar. You can edit it in:</Text>
-
-          <View style={[styles.codeHighlightContainer, styles.navigationFilename]}>
-            <MonoText style={styles.codeHighlightText}>navigation/MainTabNavigator.js</MonoText>
-          </View>
-        </View>
       </View>
     );
   }
@@ -99,6 +91,22 @@ export default class HomeScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  purple:{
+    color: '#5D2BB5',
+    },
+  head1:{
+    fontSize: 36,
+    fontWeight:'bold',
+    marginTop: 50,
+    marginLeft: 24,
+    marginRight:130,
+    },
+    sub:{
+      fontSize:18,
+      position:'absolute',
+      marginTop: 90,
+      marginLeft:25,
+      },
   container: {
     flex: 1,
     backgroundColor: '#fff',
@@ -114,20 +122,24 @@ const styles = StyleSheet.create({
     paddingTop: 30,
   },
   welcomeContainer: {
-    alignItems: 'center',
-    marginTop: 10,
-    marginBottom: 20,
+    flexDirection:'row',
+    justifyContent:'flex-start',
+    marginTop: 40,
+    marginRight: 44,
   },
   welcomeImage: {
+    marginTop:20,
     width: 100,
-    height: 80,
+    height: 100,
     resizeMode: 'contain',
-    marginTop: 3,
-    marginLeft: -10,
   },
-  getStartedContainer: {
+  stepsContainer: {
     alignItems: 'center',
-    marginHorizontal: 50,
+    width:380,
+    height:100,
+    backgroundColor:'#5D2BB5',
+    marginTop:40,
+    marginHorizontal:24,
   },
   homeScreenFilename: {
     marginVertical: 7,
@@ -142,7 +154,7 @@ const styles = StyleSheet.create({
   },
   getStartedText: {
     fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
+    color: '#fff',
     lineHeight: 24,
     textAlign: 'center',
   },
