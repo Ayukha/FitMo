@@ -32,24 +32,11 @@ export default class HomeScreen extends React.Component {
               }
               style={styles.welcomeImage}
             />
-          </View>
-
-          <View style={styles.stepsContainer}>
-            <Text style={styles.getStartedText}>Get started by opening</Text>
-
-            <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-              <MonoText style={styles.codeHighlightText}>screens/HomeScreen.js</MonoText>
             </View>
-
-            <Text style={styles.getStartedText}>
-              Change this text and your app will automatically reload.
-            </Text>
-          </View>
-
-          <View style={styles.helpContainer}>
-            <TouchableOpacity onPress={this._handleHelpPress} style={styles.helpLink}>
-              <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
-            </TouchableOpacity>
+          <View style={styles.cardsContainer}>
+            <Image source={require('../assets/images/stats.png')} style={styles.steps} />
+            <Image source={require('../assets/images/level2.png')} style={styles.level} />
+            <Image source={require('../assets/images/graph2.png')} style={styles.graph} />
           </View>
         </ScrollView>
       </View>
@@ -91,6 +78,27 @@ export default class HomeScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  cardsContainer:{
+    flex:1,
+    },
+  steps:{
+    width:380,
+    height:180.5,
+    marginLeft:25,
+    marginTop:40,
+  },
+  level:{
+    width:380,
+    height:107,
+    marginLeft:25,
+    marginTop:20,
+    },
+    graph:{
+      width:380,
+      height:237.5,
+      marginLeft:25,
+      marginTop:20,
+      },
   purple:{
     color: '#5D2BB5',
     },
